@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2018_06_26_001152) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "locations", force: :cascade do |t|
     t.string "name"
-    t.integer "trip_id"
+    t.bigint "trip_id"
     t.date "date"
     t.string "text"
     t.datetime "created_at", null: false
@@ -54,4 +57,5 @@ ActiveRecord::Schema.define(version: 2018_06_26_001152) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "locations", "trips"
 end

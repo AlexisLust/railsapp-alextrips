@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *= require_tree .
+ *= require_self
+ */
+
+
+ #margining {
+   margin-top:60px;
+
+ }
+ .mainpage {
+   margin-right: 20px;
+   margin-left: 20px;
+   padding-right: 25px;
+   padding-left: 25px;
+   background-image: url("wood.jpeg");
+   background-repeat: repeat;
+ }
+
+ .nav-item-Nico{
+  color: white;
+  background-color: black;
+  opacity: 0.7;
+  margin-right: 5px;
+  border-radius: 15px;
+  text-shadow: 1px 2px black;
+}
+.nav-item-Nico a:hover {
+
+  border-radius: 15px;
+  background-color: grey;
+
+}
+
+.nav.navbar-nav.ml-auto li a {
+  color: white;
+}
+
+#navbar #div #brand{
+ text-shadow: 1px 1px black;
+ border-spacing: 10px;
+}
+
+#navbar #div #brand:hover{
+ text-shadow: 1px 1px black;
+ background-color: grey;
+ border-radius: 15px;
+}
+
+#navbar{
+ background: linear-gradient(black, grey);
+}
+
+#slickitems{
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.slick-dots li button:before {
+  color: white;
+}

@@ -1,0 +1,28 @@
+<% trip = Trip.find(params[:trip_id])%>
+<body id="article">
+
+  <div id="container-article" class="article-clean">
+      <div id="container" class="container">
+              <div id="containertwo" class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2" style="background-color:white;">
+                  <div class="intro">
+
+                  <h1 class="text-center"><%= trip.name %></h1>
+                  <p class="text-center">
+                    <%= image_tag trip.image.url, class: 'img-fluid', style: 'max-width: 100%' if trip.image%>
+                  </p>
+                  <p class="text-center"><%= trip.summary %></p>
+                  <br>
+                  <% trip.locations.each do |s|%>
+                  <div class="text">
+                      <h2 calss="text-center"><%= s.name %> </h2>
+                      <figure><%= image_tag s.image.url, class: "figure-img" %>
+                          <figcaption>Date: <%= s.date %></figcaption>
+                      </figure>
+                      <p class="text-center"><%= s.text %></p>
+                  <% end %>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>

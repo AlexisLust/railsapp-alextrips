@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<div class="mainpage">
+
+    <%= render 'trips/carousel' %>
+    <br>
+    <form action="/trips/search" method="GET" id="search-form">
+      <input type="text" placeholder="Trip" name="name" value="<%= @name %>" id="name_val">
+      <input type="submit" value="Search" class="btn btn-primary">
+    </form>
+
+    <% if user_signed_in? %>
+    <br>
+    <a><%= link_to 'New Trip', new_trip_path, class: "btn btn-primary btn-sm" %></a>
+
+    <% end %>
+
+    <div id="trip_search_results">
+    <%= render 'trips/list' %>
+    </div>
+
+</div>

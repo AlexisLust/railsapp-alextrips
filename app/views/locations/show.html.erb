@@ -1,0 +1,31 @@
+<div class="container" id="margining">
+
+</div>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @location.name %>
+</p>
+
+<p>
+  <strong>Trip:</strong>
+  <%= @location.trip.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @location.date %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @location.text %>
+</p>
+
+<p>
+  <%= image_tag @location.image.url(:large) %>
+</p>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>

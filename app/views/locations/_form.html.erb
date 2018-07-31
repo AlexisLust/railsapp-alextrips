@@ -1,0 +1,42 @@
+<%= form_with(model: location, local: true) do |form| %>
+  <% if location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+      <% location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trip_id %>
+    <%= collection_select(:location, :trip_id, Trip.all, :id, :name )%>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+      <%= form.date_select :date, start_year: 1965, end_year: Date.today.year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.text_field :text %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

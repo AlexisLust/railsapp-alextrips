@@ -1,0 +1,25 @@
+<div class="article-list">
+        <div class="container">
+            <div class="row articles">
+              <% @trips.each do |trip| %>
+                <div class="col-sm-6 col-md-4 item">
+                    <a href="<%= article_trips_url(trip_id: trip.id) %>">
+                    <%= image_tag trip.image.url(:medium), class: 'img-fluid', style: 'max-width: 100%' if trip.image%>
+                    </a>
+                    <h3 class="name"><%= link_to trip.name, article_trips_url(trip_id: trip.id) %></h3>
+                    <p><%= trip.get_locations %></p>
+                    <p class="description"><%= trip.summary %></p>
+
+                    <% if user_signed_in? %>
+                    <br>
+                    <%= link_to 'Show', trip %>
+                    <br>
+                    <%= link_to 'Edit', edit_trip_path(trip) %>
+                    <br>
+                    <%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <% end %>
+                </div>
+              <% end %>
+            </div>
+        </div>
+    </div>
